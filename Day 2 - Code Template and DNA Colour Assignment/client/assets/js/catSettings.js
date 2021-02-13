@@ -1,8 +1,8 @@
 
-var colors = Object.values(allColors())
+const colors = Object.values(allColors())
 
-var defaultDNA = {
-    "headcolor" : 10,
+const defaultDNA = {
+    "headColor" : 10,
     "mouthColor" : 13,
     "eyesColor" : 96,
     "earsColor" : 10,
@@ -21,19 +21,18 @@ $( document ).ready(function() {
   $('#dnamouth').html(defaultDNA.mouthColor);
   $('#dnaeyes').html(defaultDNA.eyesColor);
   $('#dnaears').html(defaultDNA.earsColor);
-    
-//   $('#dnashape').html(defaultDNA.eyesShape)
-//   $('#dnadecoration').html(defaultDNA.decorationPattern)
-//   $('#dnadecorationMid').html(defaultDNA.decorationMidcolor)
-//   $('#dnadecorationSides').html(defaultDNA.decorationSidescolor)
-//   $('#dnaanimation').html(defaultDNA.animation)
-//   $('#dnaspecial').html(defaultDNA.lastNum)
+  $('#dnashape').html(defaultDNA.eyesShape)
+  $('#dnadecoration').html(defaultDNA.decorationPattern)
+  $('#dnadecorationMid').html(defaultDNA.decorationMidcolor)
+  $('#dnadecorationSides').html(defaultDNA.decorationSidescolor)
+  $('#dnaanimation').html(defaultDNA.animation)
+  $('#dnaspecial').html(defaultDNA.lastNum)
 
   renderCat(defaultDNA)
 });
 
 function getDna(){
-    var dna = ''
+    let dna = ''
     dna += $('#dnabody').html()
     dna += $('#dnamouth').html()
     dna += $('#dnaeyes').html()
@@ -49,12 +48,55 @@ function getDna(){
 }
 
 function renderCat(dna){
-    headColor(colors[dna.headcolor],dna.headcolor)
-    $('#bodycolor').val(dna.headcolor)
+    headColor(colors[dna.headcolor],dna.headColor)
+    $('#bodycolor').val(dna.headColor)
+    mouthChestTailColor(colors[dna.mouthcolor],dna.mouthColor)
+    $('#mouthcolor').val(dna.mouthColor)
+    eyesColor(colors[dna.eyescolor],dna.eyesColor)
+    $('#eyecolor').val(dna.eyesColor)
+    earsPawsColor(colors[dna.earscolor],dna.earsColor)
+    $('#earcolor').val(dna.earsColor)
+    eyeVariation(dna.eyesShape)
+    $('#eyeshape').val(dna.eyesShape)
+    decorationVariation(dna.decorationPattern)
+    $('#decorativepattern').val(dna.decorationPattern)
+    innerDecorationColor(colors[dna.decorationMidcolor],dna.decorationMidcolor)
+    $('#innerDecorationColor').val(dna.decorationMidcolor)
+    outerDecorationColor(colors[dna.decorationSidescolor],dna.decorationSidescolor)
+    $('#outerDecorationColor').val(dna.decorationSidescolor)
 }
 
-// Changing cat colors
+// Changing cat attributes (colors, eyes, patterns)
 $('#bodycolor').change(()=>{
-    var colorVal = $('#bodycolor').val()
+    const colorVal = $('#bodycolor').val()
     headColor(colors[colorVal],colorVal)
 })
+$('#mouthcolor').change(()=>{
+  const colorVal = $('#mouthcolor').val()
+  mouthChestTailColor(colors[colorVal],colorVal)
+})
+$('#eyecolor').change(()=>{
+  const colorVal = $('#eyecolor').val()
+  eyesColor(colors[colorVal],colorVal)
+})
+$('#earcolor').change(()=>{
+  const colorVal = $('#earcolor').val()
+  earsPawsColor(colors[colorVal],colorVal)
+})
+$('#eyeshape').change(()=>{
+  const shape = parseInt($('#eyeshape').val())
+  eyeVariation(shape)
+})
+$('#decorativepattern').change(()=>{
+  const pattern = parseInt($('#decorativepattern').val())
+  decorationVariation(pattern)
+})
+$('#innerDecorationColor').change(()=>{
+  const colorVal = $('#innerDecorationColor').val()
+  innerDecorationColor(colors[colorVal],colorVal)
+})
+$('#outerDecorationColor').change(()=>{
+  const colorVal = $('#outerDecorationColor').val()
+  outerDecorationColor(colors[colorVal],colorVal)
+})
+
