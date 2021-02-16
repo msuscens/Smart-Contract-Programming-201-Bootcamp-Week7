@@ -20,18 +20,6 @@ $( document ).ready(function() {
 
   getDefaultKittie()
 
-  // $('#dnabody').html(defaultDNA.headColor);
-  // $('#dnamouth').html(defaultDNA.mouthColor);
-  // $('#dnaeyes').html(defaultDNA.eyesColor);
-  // $('#dnaears').html(defaultDNA.earsColor);
-  // $('#dnashape').html(defaultDNA.eyesShape)
-  // $('#dnadecoration').html(defaultDNA.decorationPattern)
-  // $('#dnadecorationMid').html(defaultDNA.decorationMidColor)
-  // $('#dnadecorationSides').html(defaultDNA.decorationSidesColor)
-  // $('#dnaanimation').html(defaultDNA.animation)
-  // $('#dnaspecial').html(defaultDNA.lastNum)
-
-  // renderCat(defaultDNA)
 });
 
 function getDefaultKittie() {
@@ -90,7 +78,7 @@ function getRandomIntegerBetween(low, high){
     return RandomValue
   }
   catch(err){
-    consolelog(`In getRandomIntegerBetween(${low}, ${high}): ${err}`)
+    console.log(`In getRandomIntegerBetween(${low}, ${high}): ${err}`)
   }
 }
 

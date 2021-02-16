@@ -15,10 +15,6 @@ function genColors(){
 }
 
 function headColor(color,code) {
-    console.log(`In headColor(${color},${code})`)
-    console.log(color)
-    console.log(code)
-
     $('.cat__head, .cat__chest').css('background', '#' + color) //Change cat color
     $('#headcode').html('code: '+code)    //Update sliders badge text
     $('#dnabody').html(code)              //Update the body color DNA part (displayed below the cat)
