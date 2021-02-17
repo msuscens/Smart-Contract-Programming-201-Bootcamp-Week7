@@ -331,30 +331,23 @@ function animationVariation(num) {
 }
 
 function removeAllAnimations() { 
-    $("#head").removeClass("movingHead")
-    $("#leftEar").removeClass("movingLeftEar")
-    $("#rightEar").removeClass("movingRightEar")
 
-    $("#tail").removeClass("movingTail")
+    $("#head").attr("class", "cat__head")
+    $("#leftEar").attr("class", "cat__ear--left")
+    $("#rightEar").attr("class", "cat__ear--right")
+    $("#tail").attr("class", "cat__tail")
 
-    $("#leftEar").removeClass("wiggleLeftEar")
+    $("#nose").attr("class", "cat__nose")
+    $("#leftWhiskers").attr("class", "cat__whiskers-left")
+    $("#rightWhiskers").attr("class", "cat__whiskers-right")
 
-    $("#rightEar").removeClass("wiggleRightEar")
+    $("#eyes").attr("class", "cat__eye")
+    $("#cat").attr("class", "cat")
 
-    $("#leftEar").removeClass("alertingLeftEar")
-    $("#rightEar").removeClass("alertingRightEar")
-
-    $(".cat__nose").removeClass("twitchingNose")
-    $(".cat__whiskers-left").removeClass("twitchingLeftWhiskers")
-    $(".cat__whiskers-right").removeClass("twitchingRightWhiskers")
-
-    $(".cat__eye").removeClass("wanderingEyes")
-
-    $(".cat").removeClass("catRising")
-    $(".cat__paw-left_inner").removeClass("extendingRearLeg")
-    $(".cat__paw-right_inner").removeClass("extendingRearLeg")
-    $(".cat__paw-left").removeClass("raisingFrontLeg")
-    $(".cat__paw-right").removeClass("raisingFrontLeg")    
+    $("#leftFrontPaw").attr("class", "cat__paw-left_front")
+    $("#rightFrontPaw").attr("class", "cat__paw-right_front")
+    $("#leftRearPaw").attr("class", "cat__paw-left_rear")
+    $("#rightRearPaw").attr("class", "cat__paw-right_rear")
 }
 
 function animationType1() {  // Roll Head
@@ -385,21 +378,19 @@ function animationType6() {  // Alert ears
 }
 
 function animationType7() {  // Twitch nose & whiskers
-    $(".cat__nose").addClass("twitchingNose")
-    $(".cat__whiskers-left").addClass("twitchingLeftWhiskers")
-    $(".cat__whiskers-right").addClass("twitchingRightWhiskers")
+    $("#nose").addClass("twitchingNose")
+    $("#leftWhiskers").addClass("twitchingLeftWhiskers")
+    $("#rightWhiskers").addClass("twitchingRightWhiskers")
 }
 
 function animationType8() {  // Wandering eyes
-    $(".cat__eye").addClass("wanderingEyes")
+    $("#eyes").addClass("wanderingEyes")
 }
 
 function animationType9() {  // Stand up
-    $(".cat").addClass("catRising")
-    $(".cat__paw-left_inner").addClass("extendingRearLeg")
-    $(".cat__paw-right_inner").addClass("extendingRearLeg")
-    $(".cat__paw-left").addClass("raisingFrontLeg")
-    $(".cat__paw-right").addClass("raisingFrontLeg")
+    $("#cat").addClass("catRising")
+    $("#leftRearPaw, #rightRearPaw").addClass("extendingRearLeg")
+    $("#leftFrontPaw, #rightFrontPaw").addClass("raisingFrontLeg")
 }
 
 function animationType10() {  // Hyperactive
